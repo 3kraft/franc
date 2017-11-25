@@ -54,6 +54,7 @@ function generate(basename) {
   var list = topLanguages;
   var fixtures;
   var byScript;
+  var includedlanguages = pack.includedlanguages || [];
 
   if (!threshold) {
     return;
@@ -65,6 +66,12 @@ function generate(basename) {
   if (threshold !== -1) {
     list = list.filter(function (info) {
       return info.speakers >= threshold;
+    });
+  }
+
+  if (includedlanguages.length > 0) {
+    list = list.filter(function (info) {
+      return includedlanguages.indexOf(info.iso6393) > -1;
     });
   }
 

@@ -8,3 +8,5 @@ node_modules/
 /franc-all.js
 packages/franc-all/index.js
 packages/franc-min/index.js
+franc-custom.js
+franc.iml
